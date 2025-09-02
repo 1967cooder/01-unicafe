@@ -139,11 +139,11 @@ const App = () => {
     </div>
   )
 }
-------------------------------------------------------------
+------------------------------------Hyvä---------
 //toinen vaihtoehto
-//Компонент за един ред статистика const StatisticLine = ({ text, value }) => { 
-return ( <p>{text}: {value}</p>
-  ) 
+//Компонент за един ред статистика 
+const StatisticLine = ({ text, value }) => { 
+return ( <p>{text}: {value}</p>) 
 } 
 // Компонент за всички статистики 
 const Statistics = (props) => { 
