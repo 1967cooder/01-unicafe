@@ -2,6 +2,7 @@ import { useState } from "react"
 
 
 
+
 // Funkcionalen Компонент за един ред статистика. 
 // ({ text, value }) е деструктуриране на props: очакваме да ни подадат text и value.
 const StatisticLine = ({ text, value }) => {
@@ -44,32 +45,27 @@ const Statistics = ({good, neutral, bad}) => {
  const History = ({good, neutral, bad}) => {
   const total = good + neutral + bad;
   if ( total === 0) {
-    return <div>No feed back given</div>
+    return <div>No feedback given</div>
   }
   return <Statistics good={good} neutral={neutral} bad={bad}/>
  }
 
 const App = () => {
-  //Дефинираме state променливи (вътрешна памет на компонента):
-//good, neutral, bad, total започват от 0.
-//setGood, setNeutral, setBad, setTotal са функции, с които променяме съответния state и причиняваме пререндериране.
   const [good, setGood] = useState(0)
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
-  
-//JSX, който рисува заглавие и 3 бутона.
-// onClick извиква setGood / setNeutral / setBad за увеличаване.
-//Второ заглавие.
-//Рендериране на History който решава дали да покаже статистика или "No feedback given".
+
   return (
     <div>
-      <h1>Give feedback</h1>
+           
+       <h1>Give feedback</h1>
       <button onClick= {() => setGood(good +1)}>good</button>
       <button onClick= {() => setNeutral(neutral+1)}>neutral</button>
       <button onClick= {() => setBad(bad+1)}>bad</button>
 
       <h1>Statistics</h1>
-      <History good={good} neutral={neutral} bad={bad} />
+      <History good={good} neutral={neutral} bad={bad} /> 
+      
     </div>
   )
 }
